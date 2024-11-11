@@ -1,15 +1,33 @@
-Source: template-repository
-Section: unknown
+Source: golang-github-linuxkit-virtsock
+Section: golang
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Go Packaging Team <pkg-go-maintainers@lists.alioth.debian.org>
+Uploaders:
+ Balint Reczey <rbalint@ubuntu.com>,
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-golang,
+ golang-any,
+ golang-github-pkg-errors-dev,
+ golang-golang-x-sys-dev,
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+Homepage: https://github.com/linuxkit/virtsock
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-linuxkit-virtsock
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-linuxkit-virtsock.git
+XS-Go-Import-Path: github.com/linuxkit/virtsock
+Testsuite: autopkgtest-pkg-go
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: golang-github-linuxkit-virtsock-dev
+Architecture: all
+Depends:
+ golang-github-pkg-errors-dev,
+ golang-golang-x-sys-dev,
+ ${misc:Depends},
+ ${shlibs:Depends},
+Multi-Arch: foreign
+Description: Go bindings for Hyper-V and virtio sockets
+ This package contains Go bindings for Microsoft's Hyper-V sockets, a
+ Windows Socket with a new address family and specialized endpoint
+ for targeting virtual machines and for OASIS's Virtual I/O Device
+ sockets.

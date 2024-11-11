@@ -1,0 +1,2 @@
+version=4
+opts="mode=git,repacksuffix=+ds,dversionmangle=auto" https://github.com/linuxkit/virtsock.git HEAD

@@ -1,5 +1,48 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-github-linuxkit-virtsock (0.0~git20220523.1a23e78+ds-1) unstable; urgency=medium
 
-  * Initial release
+  [ Faidon Liambotis ]
+  * Team upload.
+  * Acknowledge NMU.
+  * New upstream release.
+    - Includes commit b49a012, which fixes a FTBFS due to the use of accept4
+      without _GNU_SOURCE. (Closes: #976564)
+    - Add new build dependency golang-github-pkg-errors-dev.
+  * Fix debian/watch to use fetch git snapshots; upstream does not tag
+    versions, and thus the existing watch file was not functional.
+  * Repack the source tree to exclude upstream's vendorized dependencies.
+  * Various debian/copyright changes:
+    - Reformat for clarity and ease of modification.
+    - Detail upstream authors' copyright information more accurately.
+    - Update for new upstream release.
+    - Use Expat to refer to the MIT license, per DEP5.
+    - Use https URLs.
+  * Set Rules-Requires-Root: no.
+  * Change Section from "devel" to "golang".
+  * Bump Standards-Version to 4.6.2.
+  * Add Repository, Repository-Browse, Documentation to upstream/metadata.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+  [ Alexandre Viau ]
+  * Point Vcs-* urls to salsa.debian.org.
+
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since stretch/buster:
+    + Build-Depends: Drop versioned constraint on debhelper.
+    + Build-Depends: Drop versioned constraint on golang-golang-x-sys-dev.
+  * Bump debhelper compatibility to 13.
+  * Change priority extra to priority optional.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit.
+
+ -- Faidon Liambotis <paravoid@debian.org>  Tue, 02 Apr 2024 09:28:45 +0300
+
+golang-github-linuxkit-virtsock (0.0~git20170720.0.0416e3d-1.1) unstable; urgency=medium
+
+  * Non maintainer upload by the Reproducible Builds team.
+  * No source change upload to rebuild on buildd with .buildinfo files.
+
+ -- Holger Levsen <holger@debian.org>  Sat, 09 Jan 2021 12:29:16 +0100
+
+golang-github-linuxkit-virtsock (0.0~git20170720.0.0416e3d-1) unstable; urgency=medium
+
+  * Initial release (Closes: #873031)
+
+ -- Balint Reczey <rbalint@ubuntu.com>  Sun, 20 Aug 2017 23:50:06 +0200
